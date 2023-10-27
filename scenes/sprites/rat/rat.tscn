@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnkkdmwfdlu3i"]
+
+[ext_resource type="Texture2D" uid="uid://c2wrmt85spsdl" path="res://assets/sprites/rat.png" id="1_25p7y"]
+
+[node name="rat" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_25p7y")

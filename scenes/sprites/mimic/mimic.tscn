@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0e8usamvt0ho"]
+
+[ext_resource type="Texture2D" uid="uid://dl0bqlp3ms4yl" path="res://assets/sprites/mimic.png" id="1_0qx3q"]
+
+[node name="mimic" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_0qx3q")

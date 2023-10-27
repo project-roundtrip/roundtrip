@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bglmvo2gomnao"]
+
+[ext_resource type="Texture2D" uid="uid://dspc4yjnipqfo" path="res://assets/sprites/ferris.png" id="1_b3nkh"]
+
+[node name="ferris" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_b3nkh")

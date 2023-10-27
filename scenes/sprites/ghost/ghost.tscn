@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm4al2mx45wyj"]
+
+[ext_resource type="Texture2D" uid="uid://x7s6xs4bput6" path="res://assets/sprites/ghost.png" id="1_2ikdm"]
+
+[node name="ghost" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("1_2ikdm")
