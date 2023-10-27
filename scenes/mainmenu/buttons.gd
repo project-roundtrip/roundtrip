@@ -16,12 +16,11 @@ func _on_start_button_pressed():
 
 
 func _on_help_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/help/help.tscn")
 
 
 func _on_credits_button_pressed():
-	pass # Replace with function body.
-
+	get_tree().change_scene_to_file("res://scenes/credits/credits.tscn")
 
 func _on_exit_button_pressed():
 	get_tree().quit()
