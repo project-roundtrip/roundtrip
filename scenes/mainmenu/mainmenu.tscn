@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7qwa3cmuk0rr"]
+[gd_scene load_steps=5 format=3 uid="uid://b7qwa3cmuk0rr"]
 
 [ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_xjpaj"]
 [ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/tile_0084.png" id="1_ygvqr"]
+[ext_resource type="Script" path="res://scenes/mainmenu/buttons.gd" id="3_6tftj"]
 [ext_resource type="FontFile" uid="uid://bf41iyd07kjgn" path="res://assets/fonts/PixeloidSansBold.ttf" id="3_syuvn"]
 
 [node name="mainmenu" type="Node2D"]
@@ -37,6 +38,7 @@ stretch_mode = 4
 [node name="ControlsContainer" type="VBoxContainer" parent="RootContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 alignment = 1
+script = ExtResource("3_6tftj")
 
 [node name="StartButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 texture_filter = 1
@@ -69,3 +71,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_syuvn")
 theme_override_font_sizes/font_size = 25
 text = "Exit"
+
+[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_start_button_pressed"]
+[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_exit_button_pressed"]
