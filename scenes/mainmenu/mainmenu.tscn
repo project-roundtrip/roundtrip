@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7qwa3cmuk0rr"]
 
 [ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_xjpaj"]
-[ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/tile_0084.png" id="1_ygvqr"]
+[ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/wizard.png" id="2_a377c"]
 [ext_resource type="Script" path="res://scenes/mainmenu/buttons.gd" id="3_6tftj"]
 [ext_resource type="FontFile" uid="uid://bf41iyd07kjgn" path="res://assets/fonts/PixeloidSansBold.ttf" id="3_syuvn"]
 
@@ -32,7 +32,7 @@ alignment = 1
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("1_ygvqr")
+texture = ExtResource("2_a377c")
 stretch_mode = 4
 
 [node name="ControlsContainer" type="VBoxContainer" parent="RootContainer/TextureRect/HBoxContainer"]
