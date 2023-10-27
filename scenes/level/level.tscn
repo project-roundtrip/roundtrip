@@ -1,17 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=5 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="Script" path="res://scenes/level/pathsprite.gd" id="2_peavn"]
-[ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/tile_0084.png" id="3_0nxu0"]
+[ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_g65ci"]
 
 [sub_resource type="Curve2D" id="Curve2D_p64wq"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0.625, -38.3726, -0.235968, -37.1658, 0.235968, 37.1658, 40.625, 0.75, 2.59565, 0, -2.59565, 0, 0.375, 40.7552, 0.235969, 34.7986, -0.235969, -34.7986, -39.25, 1.1286, 0, 0, 0, 0, -4.125, -38.6234, 0, 0, 0, 0, 1.375, -38.6234)
 }
 point_count = 6
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dejbg"]
-radius = 7.95914
 
 [node name="level" type="Node2D"]
 
@@ -29,11 +26,5 @@ curve = SubResource("Curve2D_p64wq")
 position = Vector2(0.625, -38.3726)
 rotation = 0.774309
 
-[node name="Area2D" type="Area2D" parent="Sprite2D/Path2D/PathFollow2D"]
+[node name="wizard" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("4_g65ci")]
 script = ExtResource("2_peavn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Path2D/PathFollow2D/Area2D"]
-shape = SubResource("CircleShape2D_dejbg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Path2D/PathFollow2D/Area2D"]
-texture = ExtResource("3_0nxu0")
