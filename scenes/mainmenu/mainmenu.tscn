@@ -6,7 +6,8 @@
 
 [node name="RootContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(800, 600)
-offset_right = 4.0
+offset_right = 800.0
+offset_bottom = 600.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="RootContainer"]
 custom_minimum_size = Vector2(800, 600)
@@ -18,32 +19,33 @@ alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="StartButton" type="Button" parent="RootContainer/HBoxContainer/LogoContainer"]
-custom_minimum_size = Vector2(250, 0)
+[node name="LogoRect" type="TextureRect" parent="RootContainer/HBoxContainer/LogoContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
-text = "Start Game"
-
-[node name="HelpButton" type="Button" parent="RootContainer/HBoxContainer/LogoContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-text = "Help"
-
-[node name="CreditsButton" type="Button" parent="RootContainer/HBoxContainer/LogoContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-text = "Credits"
-
-[node name="ExitButton" type="Button" parent="RootContainer/HBoxContainer/LogoContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-text = "Exit"
+texture = ExtResource("1_ygvqr")
+stretch_mode = 4
 
 [node name="ControlsContainer" type="VBoxContainer" parent="RootContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="LogoRect" type="TextureRect" parent="RootContainer/HBoxContainer/ControlsContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(256, 256)
+[node name="StartButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-texture = ExtResource("1_ygvqr")
+text = "Start Game"
+
+[node name="HelpButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Help"
+
+[node name="CreditsButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Exit"
