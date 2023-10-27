@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ypyql205uodu"]
+
+[ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/tile_0084.png" id="1_v7c7r"]
+
+[node name="wizard" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_v7c7r")
