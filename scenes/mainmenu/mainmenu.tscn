@@ -73,4 +73,6 @@ theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_start_button_pressed"]
+[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HelpButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_help_button_pressed"]
+[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/CreditsButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_exit_button_pressed"]
