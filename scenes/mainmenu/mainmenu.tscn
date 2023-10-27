@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7qwa3cmuk0rr"]
+[gd_scene load_steps=3 format=3 uid="uid://b7qwa3cmuk0rr"]
 
+[ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_xjpaj"]
 [ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/tile_0084.png" id="1_ygvqr"]
 
 [node name="mainmenu" type="Node2D"]
@@ -9,43 +10,49 @@ custom_minimum_size = Vector2(800, 600)
 offset_right = 800.0
 offset_bottom = 600.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="RootContainer"]
+[node name="TextureRect" type="TextureRect" parent="RootContainer"]
+layout_mode = 2
+texture = ExtResource("1_xjpaj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RootContainer/TextureRect"]
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
+offset_right = 800.0
+offset_bottom = 600.0
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="LogoContainer" type="VBoxContainer" parent="RootContainer/HBoxContainer"]
+[node name="LogoContainer" type="VBoxContainer" parent="RootContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="LogoRect" type="TextureRect" parent="RootContainer/HBoxContainer/LogoContainer"]
+[node name="LogoRect" type="TextureRect" parent="RootContainer/TextureRect/HBoxContainer/LogoContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_ygvqr")
 stretch_mode = 4
 
-[node name="ControlsContainer" type="VBoxContainer" parent="RootContainer/HBoxContainer"]
+[node name="ControlsContainer" type="VBoxContainer" parent="RootContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="StartButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+[node name="StartButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Start Game"
 
-[node name="HelpButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+[node name="HelpButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Help"
 
-[node name="CreditsButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+[node name="CreditsButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Credits"
 
-[node name="ExitButton" type="Button" parent="RootContainer/HBoxContainer/ControlsContainer"]
+[node name="ExitButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Exit"
