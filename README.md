@@ -4,7 +4,7 @@ You're a wizard and you need to get down to the dungeon.
 Fight your way through different monsters each vulnerable to specific elements.
 Luckily as a wizard you know some spells to combine different elements to defeat the monsters.
 
----
+<img src="assets/screenshots/menu.png" width="33%" /><img src="assets/screenshots/level.png" width="33%" /><img src="assets/screenshots/help.png" width="33%" />
 
 This game was made during the [Hetzner Game Jam 2023](https://gamejam.hetzner.com) in 48 hours.
 
