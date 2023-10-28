@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=19 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="Script" path="res://scenes/level/StaircaseBackground.gd" id="2_8ob83"]
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 [ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_fo0ep"]
 [ext_resource type="Texture2D" uid="uid://dbrkc5ic5xwhk" path="res://assets/sprites/particle.png" id="5_1pyxx"]
-[ext_resource type="Script" path="res://scenes/level/spells.gd" id="6_p2ltm"]
 [ext_resource type="Texture2D" uid="uid://dax5fqtl8kdh" path="res://assets/sprites/icon_light.png" id="7_k4mi7"]
 [ext_resource type="Texture2D" uid="uid://cvyhw3741fm45" path="res://assets/sprites/icon_wind.png" id="8_be15x"]
 [ext_resource type="Texture2D" uid="uid://dohnck4sqsxc4" path="res://assets/sprites/icon_fire.png" id="9_rhr72"]
@@ -76,7 +75,6 @@ lifetime = 10.0
 
 [node name="spells" type="Node2D" parent="."]
 position = Vector2(48, 452)
-script = ExtResource("6_p2ltm")
 
 [node name="light" type="Sprite2D" parent="spells"]
 self_modulate = Color(1, 1, 1, 0.1)
