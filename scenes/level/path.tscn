@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cojbqhpjoqjp4"]
-
-[ext_resource type="PackedScene" uid="uid://cm4al2mx45wyj" path="res://scenes/sprites/ghost/ghost.tscn" id="1_2srrc"]
+[gd_scene load_steps=2 format=3 uid="uid://cojbqhpjoqjp4"]
 
 [sub_resource type="Curve2D" id="Curve2D_p64wq"]
 _data = {
@@ -17,7 +15,3 @@ curve = SubResource("Curve2D_p64wq")
 position = Vector2(-2.375, 5.39223)
 rotation = -0.65262
 loop = false
-
-[node name="ghost" parent="PathFollow2D" instance=ExtResource("1_2srrc")]
-rotation = 3.14159
-scale = Vector2(0.5, 0.5)
