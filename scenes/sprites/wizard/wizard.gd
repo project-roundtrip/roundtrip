@@ -49,6 +49,21 @@ func _on_combo_timeout():
 
 func attack(element):
 	print("attack with " + element)
+	var enemies = get_node("/root/level/StaircaseBackground/enemies")
+	var target = null;
+	for enemy in enemies.get_children():
+		if enemy is Node2D:
+			if target == null:
+				target = enemy
+			else:
+				var enemyProgress = enemy.get_child(0).get_progress()
+				var targetProgress = target.get_child(0).get_progress()
+				if enemyProgress > targetProgress:
+					target = enemy
+	
+	if target != null:
+		print("hit enemy")
+		target.get_child(0).get_child(0).kill()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

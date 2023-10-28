@@ -12,6 +12,9 @@ func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 	
 	if get_parent().get_progress_ratio() == 1:
-		var path = get_parent().get_parent()
-		get_node("/root/level/StaircaseBackground/enemies").remove_child(path)
-		path.queue_free()
+		kill()
+
+func kill():
+	var path = get_parent().get_parent()
+	get_node("/root/level/StaircaseBackground/enemies").remove_child(path)
+	path.queue_free()
