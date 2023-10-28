@@ -34,6 +34,7 @@ func remove():
 	splat.position = global_position
 	bg.get_parent().add_child(splat)
 	splat.get_child(0).play()
+	splat.get_child(1).play()
 	var path = get_parent().get_parent()
 	get_node("/root/level/StaircaseBackground/enemies").remove_child(path)
 	path.queue_free()

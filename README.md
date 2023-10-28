@@ -24,3 +24,4 @@ Thanks to [Hetzner](https://hetzner.com) for providing the jam side.
 - [Pixeloid Font from FontSpace](https://www.fontspace.com/pixeloid-font-f69232)
 - [Hit n Smash from FreePD](https://freepd.com)
 - [Blood Effects from XYEzawr](https://xyezawr.itch.io/gif-free-pixel-effects-pack-5-blood-effects)
+- [090035_Splat!.wav from Pixabay](https://pixabay.com/sound-effects/090035-splatwav-91604/)
