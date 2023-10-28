@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=4 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
+[ext_resource type="PackedScene" uid="uid://cojbqhpjoqjp4" path="res://scenes/level/path.tscn" id="3_f4ryk"]
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 
 [node name="level" type="Node2D"]
@@ -14,5 +15,8 @@ script = ExtResource("4_3e5ff")
 
 [node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
 autostart = true
+
+[node name="Path2D" parent="StaircaseBackground" instance=ExtResource("3_f4ryk")]
+position = Vector2(0, 0)
 
 [connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]
