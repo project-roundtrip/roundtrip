@@ -5,8 +5,9 @@ set -e
 mkdir -p /github/home/.config /github/home/.local/share
 cp -r /root/.config/godot/ /github/home/.config/
 cp -r /root/.local/share/godot/ /github/home/.local/share/
+rm /github/home/.local/share/godot/export_templates
+cp -r /root/.local/share/godot/templates /github/home/.local/share/godot/export_templates
 
-find /github/home/.local/share
 
 rm -rf dist/
 mkdir -p dist
