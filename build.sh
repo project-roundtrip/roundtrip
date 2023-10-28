@@ -4,7 +4,9 @@ set -e
 
 mkdir -p /github/home/.config /github/home/.local/share
 cp -r /root/.config/godot/ /github/home/.config/
-cp -r /root/.local/share/godot /github/home/.local/share/
+cp -r /root/.local/share/godot/ /github/home/.local/share/
+
+find /github/home/.local/share
 
 rm -rf dist/
 mkdir -p dist
