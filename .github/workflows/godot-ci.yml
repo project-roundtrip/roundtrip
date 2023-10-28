@@ -1,3 +1,6 @@
+permissions:
+  contents: write
+
 name: "godot-ci export"
 on:
   push:
@@ -23,8 +26,10 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+          mkdir -p /github/home/.config /github/home/.local/share
+          cp -r /root/.config/godot/ ~/.config/
+          cp -r /root/.local/share/godot/ ~/.local/share/
+          mv ~/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: ./build.sh
       - name: Upload Artifact
