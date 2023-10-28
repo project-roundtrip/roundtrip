@@ -30,7 +30,6 @@ func kill(element):
 		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
-	var parent = get_parent()
 	var splat = blood.instantiate()
 	splat.position = global_position
 	bg.get_parent().add_child(splat)
