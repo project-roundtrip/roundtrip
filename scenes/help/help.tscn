@@ -1,8 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://pyvfwh3bmmye"]
+[gd_scene load_steps=21 format=3 uid="uid://pyvfwh3bmmye"]
 
 [ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_p8d88"]
 [ext_resource type="Texture2D" uid="uid://u3r7jgqyixn4" path="res://assets/sprites/help.png" id="2_4xyhq"]
+[ext_resource type="Texture2D" uid="uid://dax5fqtl8kdh" path="res://assets/sprites/icon_light.png" id="3_vjt0x"]
 [ext_resource type="Script" path="res://scenes/help/Button.gd" id="3_xhn2b"]
+[ext_resource type="Texture2D" uid="uid://cvyhw3741fm45" path="res://assets/sprites/icon_wind.png" id="4_lienm"]
+[ext_resource type="Texture2D" uid="uid://dohnck4sqsxc4" path="res://assets/sprites/icon_fire.png" id="5_tycod"]
+[ext_resource type="Texture2D" uid="uid://dfqgmfiwl4roo" path="res://assets/sprites/icon_earth.png" id="6_l10u2"]
+[ext_resource type="Texture2D" uid="uid://c2wrmt85spsdl" path="res://assets/sprites/rat.png" id="7_bmmm6"]
+[ext_resource type="Texture2D" uid="uid://dl0bqlp3ms4yl" path="res://assets/sprites/mimic.png" id="8_0k8gi"]
+[ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/wizard.png" id="10_kipd7"]
+[ext_resource type="Texture2D" uid="uid://dspc4yjnipqfo" path="res://assets/sprites/ferris.png" id="11_4w56p"]
+[ext_resource type="Texture2D" uid="uid://bq1jbm3cewq7b" path="res://assets/sprites/bat.png" id="12_ogdwm"]
+[ext_resource type="Texture2D" uid="uid://bd55b0p5qq82n" path="res://assets/sprites/knight.png" id="13_8tnmu"]
+[ext_resource type="Texture2D" uid="uid://x7s6xs4bput6" path="res://assets/sprites/ghost.png" id="14_6mm58"]
+[ext_resource type="Texture2D" uid="uid://bc1u8fgdrsymx" path="res://assets/sprites/cyclops.png" id="15_s4n81"]
+[ext_resource type="Texture2D" uid="uid://citq4hergpns5" path="res://assets/sprites/darkmage.png" id="16_u8egv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlnpx"]
 
@@ -31,8 +44,63 @@ material = SubResource("CanvasItemMaterial_jlnpx")
 texture = SubResource("NoiseTexture2D_3kdtq")
 
 [node name="spellsheet" type="Sprite2D" parent="background"]
+visible = false
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_4xyhq")
+
+[node name="light_reach" type="Polygon2D" parent="background"]
+self_modulate = Color(0.984314, 1, 0.52549, 0.501961)
+position = Vector2(-400, -300)
+polygon = PackedVector2Array(417, 306, 202, 157, 241, 115, 387, 80, 435, 79, 582, 128, 630, 175)
+
+[node name="fire_reach" type="Polygon2D" parent="background"]
+self_modulate = Color(0.431373, 0.152941, 0.152941, 0.501961)
+polygon = PackedVector2Array(17, 9, 178, -170, 230, -144, 278, -23, 278, 33, 221, 164, 169, 191)
+
+[node name="earch_reach" type="Polygon2D" parent="background"]
+self_modulate = Color(0.0862745, 0.352941, 0.298039, 0.501961)
+polygon = PackedVector2Array(16, 6, 212, 132, 196, 188, 17, 239, -155, 188, -183, 140)
+
+[node name="wind_reach" type="Polygon2D" parent="background"]
+self_modulate = Color(0.282353, 0.290196, 0.466667, 0.501961)
+polygon = PackedVector2Array(16, 6, -134, 190, -181, 166, -250, 23, -251, -15, -196, -154, -152, -184)
+
+[node name="spells" type="Node2D" parent="background"]
+visibility_layer = 2
+position = Vector2(-68, -66)
+scale = Vector2(1.5, 1.5)
+
+[node name="light" type="Sprite2D" parent="background/spells"]
+position = Vector2(56, -9.99983)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_vjt0x")
+
+[node name="wind" type="Sprite2D" parent="background/spells"]
+position = Vector2(0.666656, 48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_lienm")
+
+[node name="fire" type="Sprite2D" parent="background/spells"]
+position = Vector2(111.333, 48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_tycod")
+
+[node name="earth" type="Sprite2D" parent="background/spells"]
+position = Vector2(56, 106.667)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_l10u2")
+
+[node name="Node2D" type="Node2D" parent="background"]
+
+[node name="Rat" type="Sprite2D" parent="background/Node2D"]
+position = Vector2(13, -210)
+scale = Vector2(4, 4)
+texture = ExtResource("7_bmmm6")
+
+[node name="Mimic" type="Sprite2D" parent="background/Node2D"]
+position = Vector2(275, 5)
+scale = Vector2(4, 4)
+texture = ExtResource("8_0k8gi")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 61.0
@@ -41,5 +109,40 @@ offset_right = 177.0
 offset_bottom = 111.0
 text = "zurück"
 script = ExtResource("3_xhn2b")
+
+[node name="Wizard" type="Sprite2D" parent="."]
+position = Vector2(418, 306)
+scale = Vector2(6, 6)
+texture = ExtResource("10_kipd7")
+
+[node name="Ferris" type="Sprite2D" parent="."]
+position = Vector2(416, 527)
+scale = Vector2(4, 4)
+texture = ExtResource("11_4w56p")
+
+[node name="Bat" type="Sprite2D" parent="."]
+position = Vector2(154, 306)
+scale = Vector2(4, 4)
+texture = ExtResource("12_ogdwm")
+
+[node name="Knight" type="Sprite2D" parent="."]
+position = Vector2(230, 133)
+scale = Vector2(4, 4)
+texture = ExtResource("13_8tnmu")
+
+[node name="Ghost" type="Sprite2D" parent="."]
+position = Vector2(600, 148)
+scale = Vector2(4, 4)
+texture = ExtResource("14_6mm58")
+
+[node name="Cyclops" type="Sprite2D" parent="."]
+position = Vector2(599, 461)
+scale = Vector2(4, 4)
+texture = ExtResource("15_s4n81")
+
+[node name="Darkmage" type="Sprite2D" parent="."]
+position = Vector2(242, 460)
+scale = Vector2(4, 4)
+texture = ExtResource("16_u8egv")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
