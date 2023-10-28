@@ -82,6 +82,7 @@ func _on_area_2d_area_entered(area):
 	area.hide();
 	sprite.self_modulate = Color(1,0,0);
 	recover_timer.start(0.2)
+	get_node("/root/level/hud").remove_health()
 
 func on_recover_timeout():
 	sprite.self_modulate = Color(1,1,1);
