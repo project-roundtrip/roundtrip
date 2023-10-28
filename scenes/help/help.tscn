@@ -109,7 +109,7 @@ offset_left = 61.0
 offset_top = 54.0
 offset_right = 177.0
 offset_bottom = 111.0
-text = "zurück"
+text = "back"
 script = ExtResource("3_xhn2b")
 
 [node name="Wizard" type="Sprite2D" parent="."]
