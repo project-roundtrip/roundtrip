@@ -11,7 +11,7 @@ point_count = 35
 
 [node name="Path2D" type="Path2D"]
 position = Vector2(397, 293)
-scale = Vector2(8, 7.97444)
+scale = Vector2(8, 8)
 curve = SubResource("Curve2D_p64wq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
