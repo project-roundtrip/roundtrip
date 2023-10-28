@@ -5,15 +5,14 @@
 
 [node name="level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="StaircaseBackground" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
-scale = Vector2(8, 8)
 texture = ExtResource("1_v6x5f")
 
-[node name="PathSpawner" type="Node2D" parent="Sprite2D"]
+[node name="PathSpawner" type="Node2D" parent="StaircaseBackground"]
 script = ExtResource("4_3e5ff")
 
-[node name="Timer" type="Timer" parent="Sprite2D/PathSpawner"]
+[node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
 autostart = true
 
-[connection signal="timeout" from="Sprite2D/PathSpawner/Timer" to="Sprite2D/PathSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]
