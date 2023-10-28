@@ -35,8 +35,6 @@ func _on_combo_timeout():
 		attack("poison")
 	elif "wind" in actions and "light" in actions:
 		attack("lightning")
-	elif ["wind", "wind"] == actions:
-		attack("ice")
 	elif "wind" in actions:
 		attack("wind")
 	elif "light" in actions:

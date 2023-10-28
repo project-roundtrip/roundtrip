@@ -11,7 +11,6 @@ extends Node2D
 	preload("res://scenes/sprites/knight/knight.tscn"),
 	preload("res://scenes/sprites/mimic/mimic.tscn"),
 	preload("res://scenes/sprites/rat/rat.tscn"),
-	preload("res://scenes/sprites/spider/spider.tscn")
 ]
 
 var timer
