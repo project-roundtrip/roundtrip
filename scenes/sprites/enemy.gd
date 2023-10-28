@@ -30,6 +30,7 @@ func kill(element):
 		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
+	get_node("/root/level/hud").updateScore(get_parent().get_progress_ratio())
 	var splat = blood.instantiate()
 	splat.position = global_position
 	bg.get_parent().add_child(splat)

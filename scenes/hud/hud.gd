@@ -1,7 +1,14 @@
 extends Control
 
+var scoreText_unformatted = "SCORE - %s"
+var score
 var health
 var hearts
+
+func updateScore(progress):
+	score += 100 * (1 - progress)
+	var scoreText_formatted = scoreText_unformatted % ceil(score)
+	get_node("MarginContainer/VBoxContainer/RichTextLabel").text = scoreText_formatted 
 
 func render_hearts():
 	for i in hearts.size():
@@ -23,14 +30,14 @@ func remove_health():
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	score = 0
 	hearts = [
-		$"MarginContainer/HBoxContainer/heart1",
-		$"MarginContainer/HBoxContainer/heart2",
-		$"MarginContainer/HBoxContainer/heart3",
-		$"MarginContainer/HBoxContainer/heart4",
-		$"MarginContainer/HBoxContainer/heart5"
+		$"MarginContainer/VBoxContainer/HBoxContainer/heart1",
+		$"MarginContainer/VBoxContainer/HBoxContainer/heart2",
+		$"MarginContainer/VBoxContainer/HBoxContainer/heart3",
+		$"MarginContainer/VBoxContainer/HBoxContainer/heart4",
+		$"MarginContainer/VBoxContainer/HBoxContainer/heart5"
 	]
-	
 	health = hearts.size()
 	render_hearts()
 	pass # Replace with function body.
