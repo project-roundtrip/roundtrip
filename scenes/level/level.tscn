@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=20 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="Script" path="res://scenes/level/StaircaseBackground.gd" id="2_8ob83"]
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 [ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_fo0ep"]
 [ext_resource type="Texture2D" uid="uid://dbrkc5ic5xwhk" path="res://assets/sprites/particle.png" id="5_1pyxx"]
+[ext_resource type="Script" path="res://scenes/level/spells.gd" id="6_p2ltm"]
 [ext_resource type="Texture2D" uid="uid://dax5fqtl8kdh" path="res://assets/sprites/icon_light.png" id="7_k4mi7"]
 [ext_resource type="Texture2D" uid="uid://cvyhw3741fm45" path="res://assets/sprites/icon_wind.png" id="8_be15x"]
 [ext_resource type="Texture2D" uid="uid://dohnck4sqsxc4" path="res://assets/sprites/icon_fire.png" id="9_rhr72"]
-[ext_resource type="AudioStream" uid="uid://cw3t0kt1ns3uo" path="res://assets/sounds/Hit n Smash.mp3" id="10_vt831"]
 [ext_resource type="PackedScene" uid="uid://pnk4ykhtlac0" path="res://scenes/hud/hud.tscn" id="10_r884r"]
+[ext_resource type="AudioStream" uid="uid://cw3t0kt1ns3uo" path="res://assets/sounds/Hit n Smash.mp3" id="10_vt831"]
 [ext_resource type="Texture2D" uid="uid://dfqgmfiwl4roo" path="res://assets/sprites/icon_earth.png" id="10_xwol6"]
 
 [sub_resource type="Curve" id="Curve_4whoe"]
@@ -32,6 +33,18 @@ scale_min = 0.05
 scale_max = 0.05
 scale_curve = SubResource("CurveTexture_dfpju")
 color = Color(1, 1, 1, 0.380392)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7syv7"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_410kb"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7krtt"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5df73"]
+radius = 20.0
 
 [node name="level" type="Node2D"]
 
@@ -63,6 +76,7 @@ lifetime = 10.0
 
 [node name="spells" type="Node2D" parent="."]
 position = Vector2(48, 452)
+script = ExtResource("6_p2ltm")
 
 [node name="light" type="Sprite2D" parent="spells"]
 self_modulate = Color(1, 1, 1, 0.1)
@@ -70,11 +84,21 @@ position = Vector2(56, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_k4mi7")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="spells/light"]
+shape = SubResource("CircleShape2D_7syv7")
+passby_press = true
+action = "Light"
+
 [node name="wind" type="Sprite2D" parent="spells"]
 self_modulate = Color(1, 1, 1, 0.1)
 position = Vector2(8, 48)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_be15x")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="spells/wind"]
+shape = SubResource("CircleShape2D_410kb")
+passby_press = true
+action = "Wind"
 
 [node name="fire" type="Sprite2D" parent="spells"]
 self_modulate = Color(1, 1, 1, 0.1)
@@ -82,15 +106,26 @@ position = Vector2(104, 48)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_rhr72")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="spells/fire"]
+shape = SubResource("CircleShape2D_7krtt")
+passby_press = true
+action = "Fire"
+
 [node name="earth" type="Sprite2D" parent="spells"]
 self_modulate = Color(1, 1, 1, 0.1)
 position = Vector2(56, 96)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_xwol6")
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="spells/earth"]
+shape = SubResource("CircleShape2D_5df73")
+passby_press = true
+action = "Earth"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_vt831")
 autoplay = true
+
 [node name="hud" parent="." instance=ExtResource("10_r884r")]
 
 [connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]
