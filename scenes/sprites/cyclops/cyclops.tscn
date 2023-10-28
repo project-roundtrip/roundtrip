@@ -7,6 +7,7 @@
 radius = 8.0
 
 [node name="cyclops" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vo1c6")
 
 [node name="Area2D" type="Area2D" parent="."]
