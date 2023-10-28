@@ -11,11 +11,11 @@ func _ready():
 func get_input():
 	if Input.is_action_just_pressed("Earth"):
 		actions.append("earth")
-	elif Input.is_action_just_pressed("Fire"):
+	if Input.is_action_just_pressed("Fire"):
 		actions.append("fire")
-	elif Input.is_action_just_pressed("Wind"):
+	if Input.is_action_just_pressed("Wind"):
 		actions.append("wind")
-	elif Input.is_action_just_pressed("Light"):
+	if Input.is_action_just_pressed("Light"):
 		actions.append("light")
 
 	if combo_timer.is_stopped() and len(actions) > 0:
