@@ -1,0 +1,38 @@
+name: "godot-ci export"
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: ci-${{ github.ref }}
+
+env:
+  GODOT_VERSION: 4.1.2
+  EXPORT_NAME: roundtrip
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.1.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Build
+        run: ./build.sh
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: all-builds
+          path: dist/
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          folder: dist/
