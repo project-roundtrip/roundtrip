@@ -3,12 +3,14 @@ extends Node2D
 @onready var path = preload("res://scenes/level/path.tscn")
 
 var timer
+var bg
 var lowerLimit = 2.0
 var upperLimit = 3.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer = get_node("Timer")
+	bg = get_parent()
 	timer.start(randf_range(lowerLimit, upperLimit))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +20,7 @@ func _process(delta):
 
 func _on_timer_timeout():
 	var tempPath = path.instantiate()
+	tempPath.rotation = bg.rotation
 	$"../enemies".add_child(tempPath)
 
 	lowerLimit *= 0.95;
