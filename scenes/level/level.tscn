@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=14 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="Script" path="res://scenes/level/StaircaseBackground.gd" id="2_8ob83"]
@@ -6,6 +6,10 @@
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 [ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_fo0ep"]
 [ext_resource type="Texture2D" uid="uid://dbrkc5ic5xwhk" path="res://assets/sprites/particle.png" id="5_1pyxx"]
+[ext_resource type="Texture2D" uid="uid://dax5fqtl8kdh" path="res://assets/sprites/icon_light.png" id="7_k4mi7"]
+[ext_resource type="Texture2D" uid="uid://cvyhw3741fm45" path="res://assets/sprites/icon_wind.png" id="8_be15x"]
+[ext_resource type="Texture2D" uid="uid://dohnck4sqsxc4" path="res://assets/sprites/icon_fire.png" id="9_rhr72"]
+[ext_resource type="Texture2D" uid="uid://dfqgmfiwl4roo" path="res://assets/sprites/icon_earth.png" id="10_xwol6"]
 
 [sub_resource type="Curve" id="Curve_4whoe"]
 _data = [Vector2(0.0141593, 0), 0.0, 0.0, 0, 0, Vector2(0.253097, 1), 0.0, 0.0, 0, 0, Vector2(0.757522, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -58,5 +62,32 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_pm6qj")
 texture = ExtResource("5_1pyxx")
 lifetime = 10.0
+
+[node name="spells" type="Node2D" parent="."]
+position = Vector2(48, 452)
+
+[node name="light" type="Sprite2D" parent="spells"]
+self_modulate = Color(1, 1, 1, 0.1)
+position = Vector2(56, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_k4mi7")
+
+[node name="wind" type="Sprite2D" parent="spells"]
+self_modulate = Color(1, 1, 1, 0.1)
+position = Vector2(8, 48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_be15x")
+
+[node name="fire" type="Sprite2D" parent="spells"]
+self_modulate = Color(1, 1, 1, 0.1)
+position = Vector2(104, 48)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_rhr72")
+
+[node name="earth" type="Sprite2D" parent="spells"]
+self_modulate = Color(1, 1, 1, 0.1)
+position = Vector2(56, 96)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_xwol6")
 
 [connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]

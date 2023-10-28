@@ -4,6 +4,7 @@ var actions = []
 var combo_timer
 var recover_timer
 var sprite
+var spells
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 	sprite = get_node("Area2D/CollisionShape2D/Sprite2D")
 	combo_timer.timeout.connect(_on_combo_timeout)
 	recover_timer.timeout.connect(on_recover_timeout)
+	spells = get_node("/root/level/spells")
 
 func get_input():
 	if Input.is_action_just_pressed("Earth"):
@@ -25,6 +27,9 @@ func get_input():
 
 	if combo_timer.is_stopped() and len(actions) > 0:
 		combo_timer.start(0.2)
+	
+	if len(actions) > 0:
+		update_spell_visibility()
 
 func _on_combo_timeout():
 	if "fire" in actions and "earth" in actions:
@@ -44,6 +49,8 @@ func _on_combo_timeout():
 	elif "earth" in actions:
 		attack("earth")
 	actions = []
+	
+	update_spell_visibility()
 
 func attack(element):
 	print("attack with " + element)
@@ -76,3 +83,9 @@ func _on_area_2d_area_entered(area):
 func on_recover_timeout():
 	sprite.self_modulate = Color(1,1,1);
 
+func update_spell_visibility():
+	for spell in spells.get_children():
+		if spell.name in actions:
+			spell.self_modulate = Color(1,1,1,1)
+		else:
+			spell.self_modulate = Color(1,1,1,0.1)
