@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3ama1yf4l6er"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ama1yf4l6er"]
 
 [ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_kndxf"]
+[ext_resource type="Script" path="res://scenes/credits/credits.gd" id="1_q20ko"]
 [ext_resource type="Script" path="res://scenes/help/Button.gd" id="3_6crpn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlnpx"]
@@ -18,6 +19,7 @@ color_ramp = SubResource("Gradient_4xkix")
 noise = SubResource("FastNoiseLite_f1lr7")
 
 [node name="help" type="Node2D"]
+script = ExtResource("1_q20ko")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
