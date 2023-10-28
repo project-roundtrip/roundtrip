@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://pnk4ykhtlac0"]
+
+[ext_resource type="Texture2D" uid="uid://cyrb2ashxwwsl" path="res://assets/sprites/heart.png" id="1_po5pb"]
+
+[node name="hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 360.0
+offset_bottom = 85.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="heart1" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_po5pb")
+expand_mode = 3
+
+[node name="heart2" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_po5pb")
+expand_mode = 3
+
+[node name="heart3" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_po5pb")
+expand_mode = 3
