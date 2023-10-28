@@ -2,7 +2,7 @@
 
 You're a wizard and you need to get down to the dungeon.
 Fight your way through different monsters each vulnerable to specific elements.
-Luckily as a wizard you know some spells to combine different elements to defeat the monsters.
+Luckily as a wizard you know some spells combining different elements to defeat the monsters.
 
 <img src="assets/screenshots/menu.png" width="33%" /><img src="assets/screenshots/level.png" width="33%" /><img src="assets/screenshots/help.png" width="33%" />
 
