@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cojbqhpjoqjp4"]
+
+[ext_resource type="PackedScene" uid="uid://cm4al2mx45wyj" path="res://scenes/sprites/ghost/ghost.tscn" id="1_2srrc"]
+[ext_resource type="Script" path="res://scenes/sprites/ghost/ghost.gd" id="2_v73jk"]
+
+[sub_resource type="Curve2D" id="Curve2D_p64wq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0.625, -32.9804, -0.235968, -37.1658, 0.235968, 37.1658, 35.625, 1.0032, 2.59565, 0, -2.59565, 0, 1, 35.2376, 0.235969, 34.7986, -0.235969, -34.7986, -31.375, 0.250801, 0, 0, 0, 0, 12.75, -22.3213)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(397, 293)
+scale = Vector2(8, 7.97444)
+curve = SubResource("Curve2D_p64wq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0.625, -32.9804)
+rotation = 0.770665
+loop = false
+
+[node name="ghost" parent="PathFollow2D" instance=ExtResource("1_2srrc")]
+script = ExtResource("2_v73jk")
