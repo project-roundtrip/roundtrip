@@ -1,3 +1,45 @@
-[gd_scene format=3 uid="uid://pyvfwh3bmmye"]
+[gd_scene load_steps=8 format=3 uid="uid://pyvfwh3bmmye"]
+
+[ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_p8d88"]
+[ext_resource type="Texture2D" uid="uid://u3r7jgqyixn4" path="res://assets/sprites/help.png" id="2_4xyhq"]
+[ext_resource type="Script" path="res://scenes/help/Button.gd" id="3_xhn2b"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlnpx"]
+
+[sub_resource type="Gradient" id="Gradient_4xkix"]
+offsets = PackedFloat32Array(0, 0.683871, 1)
+colors = PackedColorArray(0.431373, 0.431373, 0.431373, 1, 0.683871, 0.683871, 0.683871, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f1lr7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3kdtq"]
+width = 800
+height = 600
+color_ramp = SubResource("Gradient_4xkix")
+noise = SubResource("FastNoiseLite_f1lr7")
 
 [node name="help" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("1_p8d88")
+
+[node name="shadow" type="Sprite2D" parent="background"]
+modulate = Color(1, 1, 1, 0.647059)
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_jlnpx")
+texture = SubResource("NoiseTexture2D_3kdtq")
+
+[node name="spellsheet" type="Sprite2D" parent="background"]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_4xyhq")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 61.0
+offset_top = 54.0
+offset_right = 177.0
+offset_bottom = 111.0
+text = "zurück"
+script = ExtResource("3_xhn2b")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
