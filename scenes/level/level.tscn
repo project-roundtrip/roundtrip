@@ -15,7 +15,8 @@ texture = ExtResource("1_v6x5f")
 script = ExtResource("4_3e5ff")
 
 [node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
-autostart = true
+wait_time = 5.0
+one_shot = true
 
 [node name="Path2D" parent="StaircaseBackground" instance=ExtResource("3_f4ryk")]
 position = Vector2(0, 0)
