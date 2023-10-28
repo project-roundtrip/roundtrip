@@ -15,8 +15,8 @@ extends Node2D
 
 var timer
 var bg
-var lowerLimit = 2.0
-var upperLimit = 3.0
+var lowerLimit = 4.0
+var upperLimit = 6.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,8 +35,8 @@ func _on_timer_timeout():
 	tempPath.rotation = bg.rotation
 	$"../enemies".add_child(tempPath)
 
-	lowerLimit *= 0.95;
-	upperLimit *= 0.95
+	lowerLimit *= 0.97;
+	upperLimit *= 0.97
 
 	if lowerLimit < 0.35:
 		lowerLimit = 0.35
