@@ -10,7 +10,7 @@ This game was made during the [Hetzner Game Jam 2023](https://gamejam.hetzner.co
 
 It is licensed under GNU Affero General Public License version 3 or later.
 
-Thanks to [Hetzner](https://hetzner.com) for providing the jam side.
+Thanks to [Hetzner](https://hetzner.com) for providing the jam site.
 
 ▶ Play it online on [https://project-roundtrip.github.io/roundtrip/](https://project-roundtrip.github.io/roundtrip/)
 
