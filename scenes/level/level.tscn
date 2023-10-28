@@ -1,9 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=10 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="PackedScene" uid="uid://cojbqhpjoqjp4" path="res://scenes/level/path.tscn" id="3_f4ryk"]
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 [ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_fo0ep"]
+[ext_resource type="Texture2D" uid="uid://dbrkc5ic5xwhk" path="res://assets/sprites/particle.png" id="5_1pyxx"]
+
+[sub_resource type="Curve" id="Curve_4whoe"]
+_data = [Vector2(0.0141593, 0), 0.0, 0.0, 0, 0, Vector2(0.253097, 1), 0.0, 0.0, 0, 0, Vector2(0.757522, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_dfpju"]
+curve = SubResource("Curve_4whoe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pm6qj"]
+emission_shape = 1
+emission_sphere_radius = 1000.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.05
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_dfpju")
+color = Color(1, 1, 1, 0.380392)
 
 [node name="level" type="Node2D"]
 
@@ -15,7 +37,8 @@ texture = ExtResource("1_v6x5f")
 script = ExtResource("4_3e5ff")
 
 [node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
-autostart = true
+wait_time = 5.0
+one_shot = true
 
 [node name="Path2D" parent="StaircaseBackground" instance=ExtResource("3_f4ryk")]
 position = Vector2(0, 0)
@@ -26,5 +49,12 @@ rotation = 0.226893
 scale = Vector2(4, 4)
 
 [node name="enemies" type="CanvasLayer" parent="StaircaseBackground"]
+
+[node name="Dust" type="GPUParticles2D" parent="."]
+position = Vector2(400, 300)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_pm6qj")
+texture = ExtResource("5_1pyxx")
+lifetime = 10.0
 
 [connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]
