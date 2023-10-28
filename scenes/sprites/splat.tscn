@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://c1g6c3iquus2l"]
+[gd_scene load_steps=41 format=3 uid="uid://c1g6c3iquus2l"]
 
-[ext_resource type="Script" path="res://scenes/sprites/splat.gd" id="1_j3ix1"]
+[ext_resource type="Script" path="res://scenes/sprites/splat.gd" id="1_6dxdx"]
 [ext_resource type="Texture2D" uid="uid://6px8xehewy80" path="res://assets/sprites/blood_effects_3_100x100px.png" id="1_py71c"]
+[ext_resource type="AudioStream" uid="uid://cg88c6v6ldr43" path="res://assets/sounds/090035_splatwav-91604.mp3" id="2_3b1pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhtrb"]
 atlas = ExtResource("1_py71c")
@@ -264,11 +265,12 @@ animations = [{
 }]
 
 [node name="splat" type="Node2D"]
-script = ExtResource("1_j3ix1")
+script = ExtResource("1_6dxdx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_y1ljj")
 speed_scale = 2.0
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3b1pu")
