@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm4al2mx45wyj"]
+[gd_scene load_steps=3 format=3 uid="uid://cm4al2mx45wyj"]
 
 [ext_resource type="Texture2D" uid="uid://x7s6xs4bput6" path="res://assets/sprites/ghost.png" id="1_2ikdm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74p2t"]
+size = Vector2(16, 16)
+
 [node name="ghost" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_74p2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
 texture_filter = 1
 texture = ExtResource("1_2ikdm")
