@@ -1,6 +1,6 @@
 extends Enemy
 
 func _ready():
-	enemy_name = "ghost"
-	vulnerable = "solar flare"
+	enemy_name = "mimic"
+	vulnerable = "fire"
 	bg = get_node("/root/level/StaircaseBackground")

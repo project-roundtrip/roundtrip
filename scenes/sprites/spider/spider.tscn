@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bidoc7d8jp2fq"]
+[gd_scene load_steps=4 format=3 uid="uid://bidoc7d8jp2fq"]
 
+[ext_resource type="Script" path="res://scenes/sprites/spider/spider.gd" id="1_73nxn"]
 [ext_resource type="Texture2D" uid="uid://bxbggry26gkt0" path="res://assets/sprites/spider.png" id="1_tiyir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qcvv"]
 radius = 8.5
 
 [node name="spider" type="Node2D"]
+script = ExtResource("1_73nxn")
 
 [node name="Area2D" type="Area2D" parent="."]
 

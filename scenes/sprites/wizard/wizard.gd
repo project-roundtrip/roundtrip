@@ -62,8 +62,7 @@ func attack(element):
 					target = enemy
 	
 	if target != null:
-		print("hit enemy")
-		target.get_child(0).get_child(0).kill()
+		target.get_child(0).get_child(0).kill(element)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

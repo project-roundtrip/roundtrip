@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bglmvo2gomnao"]
+[gd_scene load_steps=4 format=3 uid="uid://bglmvo2gomnao"]
 
 [ext_resource type="Texture2D" uid="uid://dspc4yjnipqfo" path="res://assets/sprites/ferris.png" id="1_b3nkh"]
+[ext_resource type="Script" path="res://scenes/sprites/ferris/ferris.gd" id="1_ccow8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi6vi"]
 size = Vector2(16, 16)
 
 [node name="ferris" type="Node2D"]
+script = ExtResource("1_ccow8")
 
 [node name="Area2D" type="Area2D" parent="."]
 

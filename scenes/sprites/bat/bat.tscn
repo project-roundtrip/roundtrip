@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://nmokkf0rqaqm"]
+[gd_scene load_steps=4 format=3 uid="uid://nmokkf0rqaqm"]
 
 [ext_resource type="Texture2D" uid="uid://bq1jbm3cewq7b" path="res://assets/sprites/bat.png" id="1_1vt0u"]
+[ext_resource type="Script" path="res://scenes/sprites/bat/bat.gd" id="1_mmoef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0q2nn"]
 radius = 8.0
 
 [node name="bat" type="Node2D"]
+script = ExtResource("1_mmoef")
 
 [node name="Area2D" type="Area2D" parent="."]
 

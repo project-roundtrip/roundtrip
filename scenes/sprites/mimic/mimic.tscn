@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://0e8usamvt0ho"]
+[gd_scene load_steps=4 format=3 uid="uid://0e8usamvt0ho"]
 
 [ext_resource type="Texture2D" uid="uid://dl0bqlp3ms4yl" path="res://assets/sprites/mimic.png" id="1_0qx3q"]
+[ext_resource type="Script" path="res://scenes/sprites/mimic/mimic.gd" id="1_coe5e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16qw0"]
 size = Vector2(16, 16)
 
 [node name="mimic" type="Node2D"]
+script = ExtResource("1_coe5e")
 
 [node name="Area2D" type="Area2D" parent="."]
 
