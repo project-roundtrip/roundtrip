@@ -21,6 +21,10 @@ window/size/viewport_width=800
 window/size/viewport_height=600
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom_font="res://assets/fonts/PixeloidSansBold.ttf"
+
 [input]
 
 ui_accept={
