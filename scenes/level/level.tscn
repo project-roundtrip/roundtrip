@@ -1,30 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=4 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
-[ext_resource type="Script" path="res://scenes/level/pathsprite.gd" id="2_peavn"]
-[ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_g65ci"]
-
-[sub_resource type="Curve2D" id="Curve2D_p64wq"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0.625, -38.3726, -0.235968, -37.1658, 0.235968, 37.1658, 40.625, 0.75, 2.59565, 0, -2.59565, 0, 0.375, 40.7552, 0.235969, 34.7986, -0.235969, -34.7986, -39.25, 1.1286, 0, 0, 0, 0, -4.125, -38.6234, 0, 0, 0, 0, 1.375, -38.6234)
-}
-point_count = 6
+[ext_resource type="PackedScene" uid="uid://cojbqhpjoqjp4" path="res://scenes/level/path.tscn" id="3_f4ryk"]
+[ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 
 [node name="level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="StaircaseBackground" type="Sprite2D" parent="."]
 position = Vector2(400, 300)
-scale = Vector2(8, 8)
 texture = ExtResource("1_v6x5f")
 
-[node name="Path2D" type="Path2D" parent="Sprite2D"]
-position = Vector2(-0.375, -0.875)
-scale = Vector2(1, 0.996805)
-curve = SubResource("Curve2D_p64wq")
+[node name="PathSpawner" type="Node2D" parent="StaircaseBackground"]
+script = ExtResource("4_3e5ff")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Sprite2D/Path2D"]
-position = Vector2(0.625, -38.3726)
-rotation = 0.774309
+[node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
+autostart = true
 
-[node name="wizard" parent="Sprite2D/Path2D/PathFollow2D" instance=ExtResource("4_g65ci")]
-script = ExtResource("2_peavn")
+[node name="Path2D" parent="StaircaseBackground" instance=ExtResource("3_f4ryk")]
+position = Vector2(0, 0)
+
+[connection signal="timeout" from="StaircaseBackground/PathSpawner/Timer" to="StaircaseBackground/PathSpawner" method="_on_timer_timeout"]

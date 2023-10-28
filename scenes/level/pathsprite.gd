@@ -18,7 +18,7 @@ func get_input():
 		actions.append("wind")
 	elif Input.is_action_just_pressed("Light"):
 		actions.append("light")
-	
+
 	if combo_timer.is_stopped() and len(actions) > 0:
 		combo_timer.start(0.2)
 
@@ -48,5 +48,7 @@ func attack(element):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 	get_input()
+	get_parent().set_progress(get_parent().get_progress() + speed * delta)
+	if get_parent().get_progress_ratio() == 1:
+		queue_free()
