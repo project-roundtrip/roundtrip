@@ -23,3 +23,4 @@ Thanks to [Hetzner](https://hetzner.com) for providing the jam side.
 - [Tiny Dungeon Sprites from Kenney](https://www.kenney.nl/assets/tiny-dungeon)
 - [Pixeloid Font from FontSpace](https://www.fontspace.com/pixeloid-font-f69232)
 - [Hit n Smash from FreePD](https://freepd.com)
+- [Blood Effects from XYEzawr](https://xyezawr.itch.io/gif-free-pixel-effects-pack-5-blood-effects)

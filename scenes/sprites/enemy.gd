@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Enemy
 
+@onready var blood = preload("res://scenes/sprites/splat.tscn")
+
 @export var speed = 50
 
 var bg
@@ -28,6 +30,11 @@ func kill(element):
 		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
+	var parent = get_parent()
+	var splat = blood.instantiate()
+	splat.position = global_position
+	bg.get_parent().add_child(splat)
+	splat.get_child(0).play()
 	var path = get_parent().get_parent()
 	get_node("/root/level/StaircaseBackground/enemies").remove_child(path)
 	path.queue_free()
