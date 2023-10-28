@@ -57,14 +57,14 @@ texture_filter = 1
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 focus_neighbor_top = NodePath("../StartButton")
-focus_neighbor_bottom = NodePath("../CreditsButton")
-focus_next = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../HomepageButton")
+focus_next = NodePath("../HomepageButton")
 focus_previous = NodePath("../StartButton")
 theme_override_fonts/font = ExtResource("3_syuvn")
 theme_override_font_sizes/font_size = 25
 text = "Help"
 
-[node name="CreditsButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
+[node name="HomepageButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -74,21 +74,21 @@ focus_next = NodePath("../ExitButton")
 focus_previous = NodePath("../HelpButton")
 theme_override_fonts/font = ExtResource("3_syuvn")
 theme_override_font_sizes/font_size = 25
-text = "Credits"
+text = "Homepage"
 
 [node name="ExitButton" type="Button" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
-focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_top = NodePath("../HomepageButton")
 focus_neighbor_bottom = NodePath("../StartButton")
 focus_next = NodePath("../StartButton")
-focus_previous = NodePath("../CreditsButton")
+focus_previous = NodePath("../HomepageButton")
 theme_override_fonts/font = ExtResource("3_syuvn")
 theme_override_font_sizes/font_size = 25
 text = "Exit"
 
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_start_button_pressed"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HelpButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_help_button_pressed"]
-[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/CreditsButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HomepageButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_homepage_button_pressed"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_exit_button_pressed"]

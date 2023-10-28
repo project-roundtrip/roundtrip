@@ -20,9 +20,9 @@ func _on_help_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/help/help.tscn")
 
 
-func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/credits/credits.tscn")
+func _on_homepage_button_pressed():
+	OS.shell_open("https://github.com/project-roundtrip/roundtrip")
+
 
 func _on_exit_button_pressed():
 	get_tree().quit()
-
