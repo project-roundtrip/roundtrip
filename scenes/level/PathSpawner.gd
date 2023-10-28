@@ -22,7 +22,7 @@ var upperLimit = 6.0
 func _ready():
 	timer = get_node("Timer")
 	bg = get_parent()
-	timer.start(randf_range(lowerLimit, upperLimit))
+	timer.start(3.7)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
