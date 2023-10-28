@@ -1,6 +1,7 @@
 extends Sprite2D
 
 var lastRotate = 0
+var rotateNow = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,9 +12,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	lastRotate += delta
-	if lastRotate > 0.05:
-		rotate(0.1)
+	rotateNow = false
+	
+	if lastRotate >= delta * 3 and lastRotate <= delta * 4:
+		rotateNow = true
+	if lastRotate >= delta * 6:
+		rotate(delta * 6)
 		for child in $"enemies".get_children():
-			child.rotate(0.1)
+			child.rotate(delta * 6)
 		lastRotate = 0
+		rotateNow = true
 	pass
