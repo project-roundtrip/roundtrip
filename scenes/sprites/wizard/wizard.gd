@@ -16,6 +16,9 @@ func _ready():
 	spells = get_node("/root/level/spells")
 
 func get_input():
+	if Input.is_action_just_pressed("exit"):
+		get_tree().change_scene_to_file("res://scenes/mainmenu/mainmenu.tscn")
+	
 	if Input.is_action_just_pressed("Earth"):
 		actions.append("earth")
 	if Input.is_action_just_pressed("Fire"):
