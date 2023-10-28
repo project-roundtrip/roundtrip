@@ -14,4 +14,4 @@ func _process(delta):
 
 func _on_timer_timeout():
 	var tempPath = path.instantiate()
-	get_parent().add_sibling(tempPath)
+	$"../enemies".add_child(tempPath)
