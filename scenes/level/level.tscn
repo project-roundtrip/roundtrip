@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://g3b0hqh13mnj"]
+[gd_scene load_steps=13 format=3 uid="uid://g3b0hqh13mnj"]
 
 [ext_resource type="Texture2D" uid="uid://bofawmn7o3gya" path="res://assets/sprites/background.png" id="1_v6x5f"]
 [ext_resource type="Script" path="res://scenes/level/StaircaseBackground.gd" id="2_8ob83"]
-[ext_resource type="PackedScene" uid="uid://cojbqhpjoqjp4" path="res://scenes/level/path.tscn" id="3_f4ryk"]
 [ext_resource type="Script" path="res://scenes/level/PathSpawner.gd" id="4_3e5ff"]
 [ext_resource type="PackedScene" uid="uid://ypyql205uodu" path="res://scenes/sprites/wizard/wizard.tscn" id="4_fo0ep"]
 [ext_resource type="Texture2D" uid="uid://dbrkc5ic5xwhk" path="res://assets/sprites/particle.png" id="5_1pyxx"]
@@ -45,9 +44,6 @@ script = ExtResource("4_3e5ff")
 [node name="Timer" type="Timer" parent="StaircaseBackground/PathSpawner"]
 wait_time = 5.0
 one_shot = true
-
-[node name="Path2D" parent="StaircaseBackground" instance=ExtResource("3_f4ryk")]
-position = Vector2(0, 0)
 
 [node name="wizard" parent="StaircaseBackground" instance=ExtResource("4_fo0ep")]
 position = Vector2(34, -234)

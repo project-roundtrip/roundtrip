@@ -17,6 +17,7 @@ shape = SubResource("CircleShape2D_xkfhx")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
 texture_filter = 1
 texture_repeat = 1
+rotation = -1.5708
 texture = ExtResource("1_5r3w1")
 
 [node name="Combo_Timer" type="Timer" parent="."]
