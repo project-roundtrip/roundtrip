@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjincw8368qer"]
+[gd_scene load_steps=6 format=3 uid="uid://bjincw8368qer"]
 
 [ext_resource type="Texture2D" uid="uid://c1fom8thh5f2e" path="res://assets/sprites/background_gameover.png" id="1_brkm4"]
 [ext_resource type="Script" path="res://scenes/gameover/gameover.gd" id="1_vluv0"]
 [ext_resource type="Texture2D" uid="uid://dj7d1xa0dq36e" path="res://assets/sprites/gameover_text.png" id="2_s2nmk"]
 [ext_resource type="Script" path="res://scenes/gameover/ControlsContainer.gd" id="2_vpnpb"]
+[ext_resource type="AudioStream" uid="uid://6wrn8sboaion" path="res://assets/sounds/click-button-140881.mp3" id="4_x7gfu"]
 
 [node name="gameover" type="Node2D"]
 position = Vector2(315, 348)
@@ -45,17 +46,33 @@ text = "[center]Score of last run - 000000"
 [node name="TryAgain" type="Button" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../BackToMainMenu")
+focus_neighbor_bottom = NodePath("../BackToMainMenu")
+focus_next = NodePath("../BackToMainMenu")
+focus_previous = NodePath("../BackToMainMenu")
 text = "Try Again"
 
 [node name="BackToMainMenu" type="Button" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../TryAgain")
+focus_neighbor_bottom = NodePath("../TryAgain")
+focus_next = NodePath("../TryAgain")
+focus_previous = NodePath("../TryAgain")
 text = "Back to Main Menu"
+
+[node name="click" type="AudioStreamPlayer" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
+stream = ExtResource("4_x7gfu")
+volume_db = -15.0
 
 [node name="TextGameover" type="Sprite2D" parent="."]
 position = Vector2(84, -276)
 scale = Vector2(3.52083, 3.52083)
 texture = ExtResource("2_s2nmk")
 
+[connection signal="focus_entered" from="BackgroundGameover/MarginContainer/VBoxContainer/TryAgain" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="BackgroundGameover/MarginContainer/VBoxContainer/TryAgain" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_try_again_mouse_entered"]
 [connection signal="pressed" from="BackgroundGameover/MarginContainer/VBoxContainer/TryAgain" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_try_again_pressed"]
+[connection signal="focus_entered" from="BackgroundGameover/MarginContainer/VBoxContainer/BackToMainMenu" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="BackgroundGameover/MarginContainer/VBoxContainer/BackToMainMenu" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_back_to_main_menu_mouse_entered"]
 [connection signal="pressed" from="BackgroundGameover/MarginContainer/VBoxContainer/BackToMainMenu" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_BackToMainMenu_pressed"]
