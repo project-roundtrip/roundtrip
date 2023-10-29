@@ -7,6 +7,7 @@ class_name Enemy
 @export var speed = 50
 
 var bg
+@onready var hud = $"/root/level/hud"
 var enemy_name
 var vulnerable
 
@@ -25,12 +26,13 @@ func _process(delta):
 func kill(element):
 	if element == vulnerable:
 		print("killing " + enemy_name + " with " + element)
+		hud.updateScore(get_parent().get_progress_ratio())
+		hud.count_kill(enemy_name)
 		remove()
 	else:
 		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
-	get_node("/root/level/hud").updateScore(get_parent().get_progress_ratio())
 	var splat = blood.instantiate()
 	splat.position = global_position
 	bg.get_parent().add_child(splat)

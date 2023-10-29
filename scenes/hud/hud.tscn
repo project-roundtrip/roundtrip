@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://pnk4ykhtlac0"]
+[gd_scene load_steps=11 format=3 uid="uid://pnk4ykhtlac0"]
 
 [ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_jf16e"]
 [ext_resource type="Texture2D" uid="uid://cyrb2ashxwwsl" path="res://assets/sprites/heart.png" id="1_po5pb"]
+[ext_resource type="Texture2D" uid="uid://bq1jbm3cewq7b" path="res://assets/sprites/bat.png" id="3_ahj2x"]
+[ext_resource type="Texture2D" uid="uid://bc1u8fgdrsymx" path="res://assets/sprites/cyclops.png" id="4_06438"]
+[ext_resource type="Texture2D" uid="uid://citq4hergpns5" path="res://assets/sprites/darkmage.png" id="5_bcjpj"]
+[ext_resource type="Texture2D" uid="uid://dspc4yjnipqfo" path="res://assets/sprites/ferris.png" id="6_37kl2"]
+[ext_resource type="Texture2D" uid="uid://x7s6xs4bput6" path="res://assets/sprites/ghost.png" id="7_v17xu"]
+[ext_resource type="Texture2D" uid="uid://bd55b0p5qq82n" path="res://assets/sprites/knight.png" id="8_3xft0"]
+[ext_resource type="Texture2D" uid="uid://dl0bqlp3ms4yl" path="res://assets/sprites/mimic.png" id="9_de677"]
+[ext_resource type="Texture2D" uid="uid://c2wrmt85spsdl" path="res://assets/sprites/rat.png" id="10_qbwfx"]
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -57,3 +65,127 @@ expand_mode = 3
 custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
 text = "SCORE - 0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="batContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/batContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("3_ahj2x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/batContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="cyclopsContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/cyclopsContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("4_06438")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/cyclopsContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="dark mageContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/dark mageContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("5_bcjpj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/dark mageContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="ferrisContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/ferrisContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("6_37kl2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/ferrisContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="ghostContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/ghostContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("7_v17xu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/ghostContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="knightContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/knightContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("8_3xft0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/knightContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="mimicContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/mimicContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("9_de677")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/mimicContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
+
+[node name="ratContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/VBoxContainer/ratContainer"]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 2
+texture = ExtResource("10_qbwfx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer/ratContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[right]0"
+fit_content = true
