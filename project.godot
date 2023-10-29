@@ -26,8 +26,10 @@ window/size/viewport_height=600
 window/stretch/mode="viewport"
 
 [filesystem]
-
 import/blender/enabled=false
+
+[editor]
+export/convert_text_resources_to_binary=false
 
 [gui]
 
