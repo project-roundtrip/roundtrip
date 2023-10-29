@@ -25,12 +25,9 @@ func _process(delta):
 
 func kill(element):
 	if element == vulnerable:
-		print("killing " + enemy_name + " with " + element)
 		hud.updateScore(get_parent().get_progress_ratio())
 		hud.count_kill(enemy_name)
 		remove()
-	else:
-		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
 	var splat = blood.instantiate()

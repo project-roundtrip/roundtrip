@@ -62,7 +62,6 @@ func _on_combo_timeout():
 	update_spell_visibility()
 
 func attack(element):
-	print("attack with " + element)
 	var enemies = get_node("/root/level/StaircaseBackground/enemies")
 	var target = null;
 	for enemy in enemies.get_children():
@@ -84,7 +83,6 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	print("collision detected");
 	area.hide();
 	sprite.self_modulate = Color(1,0,0);
 	recover_timer.start(0.2)
