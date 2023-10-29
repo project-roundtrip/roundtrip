@@ -6,7 +6,7 @@ Luckily as a wizard you know some spells combining different elements to defeat 
 
 <img src="assets/screenshots/menu.png" width="33%" /><img src="assets/screenshots/level.png" width="33%" /><img src="assets/screenshots/help.png" width="33%" />
 
-This game was made during the [Hetzner Game Jam 2023](https://gamejam.hetzner.com) in 48 hours.
+This game was made during the [Hetzner Game Jam 2023](https://github.com/hetzneronline/game-jam) in 48 hours.
 
 It is licensed under GNU Affero General Public License version 3 or later.
 
