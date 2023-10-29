@@ -15,6 +15,10 @@ run/main_scene="res://scenes/mainmenu/mainmenu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://assets/sprites/wizard.png"
 
+[autoload]
+
+GlobalVar="*res://GlobalVar.gd"
+
 [display]
 
 window/size/viewport_width=800
