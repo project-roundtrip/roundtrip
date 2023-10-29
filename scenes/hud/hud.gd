@@ -30,7 +30,13 @@ func remove_health():
 
 func count_kill(enemy):
 	kills[enemy] += 1
+	render_kills()
 
+func render_kills():
+	for enemy in kills.keys():
+		get_node("MarginContainer/VBoxContainer/VBoxContainer/"
+		+ enemy
+		+ "Container/RichTextLabel").text = "[right]" + str(kills[enemy])
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,13 +54,14 @@ func _ready():
 	kills = {
 		"bat": 0,
 		"cyclops": 0,
-		"darkmage": 0,
+		"dark mage": 0,
 		"ferris": 0,
 		"ghost": 0,
 		"knight": 0,
 		"mimic": 0,
 		"rat": 0
 	};
+	render_kills()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
