@@ -1,6 +1,6 @@
 extends Control
 
-var scoreText_unformatted = "SCORE - %s"
+var scoreText_unformatted = "SCORE: %s"
 var score = 0
 var health = 0
 var hearts = []
