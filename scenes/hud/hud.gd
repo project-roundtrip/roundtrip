@@ -1,9 +1,10 @@
 extends Control
 
 var scoreText_unformatted = "SCORE - %s"
-var score
-var health
-var hearts
+var score = 0
+var health = 0
+var hearts = []
+
 
 func updateScore(progress):
 	score += 100 * (1 - progress)
@@ -40,7 +41,6 @@ func _ready():
 	]
 	health = hearts.size()
 	render_hearts()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
