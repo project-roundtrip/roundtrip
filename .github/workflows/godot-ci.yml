@@ -15,7 +15,6 @@ env:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.1.2
@@ -32,12 +31,15 @@ jobs:
           mv ~/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
       - name: Build
         run: ./build.sh
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: all-builds
-          path: dist/
-      - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          folder: dist/
+          path: public/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

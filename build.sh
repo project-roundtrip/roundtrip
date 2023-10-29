@@ -2,8 +2,6 @@
 
 set -e
 
-
-
 rm -rf dist/
 mkdir -p dist
 
