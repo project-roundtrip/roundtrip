@@ -5,6 +5,7 @@ var combo_timer
 var recover_timer
 var sprite
 var spells
+var animationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,19 +15,24 @@ func _ready():
 	combo_timer.timeout.connect(_on_combo_timeout)
 	recover_timer.timeout.connect(on_recover_timeout)
 	spells = get_node("/root/level/spells")
+	animationPlayer = get_node("Area2D/CollisionShape2D/AnimationPlayer")
 
 func get_input():
 	if Input.is_action_just_pressed("exit"):
 		get_tree().change_scene_to_file("res://scenes/mainmenu/mainmenu.tscn")
-	
+		
 	if Input.is_action_just_pressed("Earth"):
 		actions.append("earth")
+		animationPlayer.play("cast_magic")
 	if Input.is_action_just_pressed("Fire"):
 		actions.append("fire")
+		animationPlayer.play("cast_magic")
 	if Input.is_action_just_pressed("Wind"):
 		actions.append("wind")
+		animationPlayer.play("cast_magic")
 	if Input.is_action_just_pressed("Light"):
 		actions.append("light")
+		animationPlayer.play("cast_magic")
 
 	if combo_timer.is_stopped() and len(actions) > 0:
 		combo_timer.start(0.2)
