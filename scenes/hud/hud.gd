@@ -4,7 +4,7 @@ var scoreText_unformatted = "SCORE - %s"
 var score = 0
 var health = 0
 var hearts = []
-
+var kills = {}
 
 func updateScore(progress):
 	score += 100 * (1 - progress)
@@ -26,9 +26,12 @@ func remove_health():
 	if health == 0:
 		# TODO: add gameover state
 		get_tree().change_scene_to_file("res://scenes/mainmenu/mainmenu.tscn")
-		pass
-	
-	
+
+
+func count_kill(enemy):
+	kills[enemy] += 1
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	score = 0
@@ -41,6 +44,17 @@ func _ready():
 	]
 	health = hearts.size()
 	render_hearts()
+	
+	kills = {
+		"bat": 0,
+		"cyclops": 0,
+		"darkmage": 0,
+		"ferris": 0,
+		"ghost": 0,
+		"knight": 0,
+		"mimic": 0,
+		"rat": 0
+	};
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -7,6 +7,7 @@ class_name Enemy
 @export var speed = 50
 
 var bg
+@onready var hud = $"/root/level/hud"
 var enemy_name
 var vulnerable
 
@@ -30,7 +31,8 @@ func kill(element):
 		print("can't kill " + enemy_name + " with " + element)
 
 func remove():
-	get_node("/root/level/hud").updateScore(get_parent().get_progress_ratio())
+	hud.updateScore(get_parent().get_progress_ratio())
+	hud.count_kill(enemy_name)
 	var splat = blood.instantiate()
 	splat.position = global_position
 	bg.get_parent().add_child(splat)
