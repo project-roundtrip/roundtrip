@@ -92,9 +92,11 @@ text = "Exit"
 
 [node name="click" type="AudioStreamPlayer" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
 stream = ExtResource("5_f8tw7")
+volume_db = -15.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_mb553")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="focus_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_button_focus_entered"]
