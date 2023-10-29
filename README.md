@@ -20,6 +20,7 @@ Thanks to [Hetzner](https://hetzner.com) for providing the jam site.
 
 ## Credits
 
+- [Godot Engine](https://docs.godotengine.org/en/stable/index.html)
 - [Tiny Dungeon Sprites from Kenney](https://www.kenney.nl/assets/tiny-dungeon)
 - [Pixeloid Font from FontSpace](https://www.fontspace.com/pixeloid-font-f69232)
 - [Hit n Smash from FreePD](https://freepd.com)
