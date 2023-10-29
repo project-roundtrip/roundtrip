@@ -121,6 +121,7 @@ passby_press = true
 action = "Earth"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
 autoplay = true
 script = ExtResource("11_x7n2i")
 

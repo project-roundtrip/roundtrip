@@ -26,3 +26,23 @@ func _on_homepage_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+func _on_button_focus_entered():
+	$click.play()
+
+
+func _on_start_button_mouse_entered():
+	$StartButton.grab_focus()
+
+
+func _on_help_button_mouse_entered():
+	$HelpButton.grab_focus()
+
+
+func _on_homepage_button_mouse_entered():
+	$HomepageButton.grab_focus()
+
+
+func _on_exit_button_mouse_entered():
+	$ExitButton.grab_focus()

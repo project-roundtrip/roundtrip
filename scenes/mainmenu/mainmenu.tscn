@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7qwa3cmuk0rr"]
+[gd_scene load_steps=7 format=3 uid="uid://b7qwa3cmuk0rr"]
 
 [ext_resource type="Texture2D" uid="uid://brkc3ssrpvovv" path="res://assets/sprites/menubg.png" id="1_xjpaj"]
 [ext_resource type="Texture2D" uid="uid://dfle23gcbpvim" path="res://assets/sprites/wizard.png" id="2_a377c"]
 [ext_resource type="Script" path="res://scenes/mainmenu/buttons.gd" id="3_6tftj"]
 [ext_resource type="FontFile" uid="uid://bf41iyd07kjgn" path="res://assets/fonts/PixeloidSansBold.ttf" id="3_syuvn"]
+[ext_resource type="AudioStream" uid="uid://6wrn8sboaion" path="res://assets/sounds/click-button-140881.mp3" id="5_f8tw7"]
+[ext_resource type="AudioStream" uid="uid://b6nreqk7jsaev" path="res://assets/sounds/Mysterious Lights.mp3" id="6_mb553"]
 
 [node name="mainmenu" type="Node2D"]
 
@@ -88,7 +90,22 @@ theme_override_fonts/font = ExtResource("3_syuvn")
 theme_override_font_sizes/font_size = 25
 text = "Exit"
 
+[node name="click" type="AudioStreamPlayer" parent="RootContainer/TextureRect/HBoxContainer/ControlsContainer"]
+stream = ExtResource("5_f8tw7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mb553")
+autoplay = true
+
+[connection signal="focus_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/StartButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_start_button_pressed"]
+[connection signal="focus_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HelpButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HelpButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_help_button_mouse_entered"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HelpButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_help_button_pressed"]
+[connection signal="focus_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HomepageButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HomepageButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_homepage_button_mouse_entered"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/HomepageButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_homepage_button_pressed"]
+[connection signal="focus_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_button_focus_entered"]
+[connection signal="mouse_entered" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="RootContainer/TextureRect/HBoxContainer/ControlsContainer/ExitButton" to="RootContainer/TextureRect/HBoxContainer/ControlsContainer" method="_on_exit_button_pressed"]
