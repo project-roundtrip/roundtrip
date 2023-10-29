@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+var first_focus = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +30,10 @@ func _on_exit_button_pressed():
 
 
 func _on_button_focus_entered():
-	$click.play()
+	if first_focus:
+		first_focus = false
+	else:
+		$click.play()
 
 
 func _on_start_button_mouse_entered():
