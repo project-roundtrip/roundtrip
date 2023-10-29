@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjincw8368qer"]
+
+[ext_resource type="Texture2D" uid="uid://c1fom8thh5f2e" path="res://assets/sprites/background_gameover.png" id="1_brkm4"]
+[ext_resource type="Script" path="res://scenes/gameover/gameover.gd" id="1_vluv0"]
+[ext_resource type="Texture2D" uid="uid://dj7d1xa0dq36e" path="res://assets/sprites/gameover_text.png" id="2_s2nmk"]
+[ext_resource type="Script" path="res://scenes/gameover/ControlsContainer.gd" id="2_vpnpb"]
+
+[node name="gameover" type="Node2D"]
+position = Vector2(315, 348)
+script = ExtResource("1_vluv0")
+
+[node name="BackgroundGameover" type="Sprite2D" parent="."]
+self_modulate = Color(0.6, 0.6, 0.6, 1)
+position = Vector2(84, -50)
+texture = ExtResource("1_brkm4")
+
+[node name="MarginContainer" type="MarginContainer" parent="BackgroundGameover"]
+offset_left = -400.0
+offset_top = -147.0
+offset_right = 389.0
+offset_bottom = 158.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundGameover/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+script = ExtResource("2_vpnpb")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 69
+
+[node name="FlavorText" type="RichTextLabel" parent="BackgroundGameover/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "The [b]Demon Lord[/b] claims yet another soul to join his endless waltz of death and servitude in the neverending cycle of keeping intruders out of the dungeon below."
+fit_content = true
+scroll_active = false
+
+[node name="HighscoreThisRun" type="RichTextLabel" parent="BackgroundGameover/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Score of last run - 000000"
+
+[node name="TryAgain" type="Button" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Try Again"
+
+[node name="BackToMainMenu" type="Button" parent="BackgroundGameover/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Main Menu"
+
+[node name="TextGameover" type="Sprite2D" parent="."]
+position = Vector2(83, -283)
+scale = Vector2(3.52083, 3.52083)
+texture = ExtResource("2_s2nmk")
+
+[connection signal="pressed" from="BackgroundGameover/MarginContainer/VBoxContainer/TryAgain" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_try_again_pressed"]
+[connection signal="pressed" from="BackgroundGameover/MarginContainer/VBoxContainer/BackToMainMenu" to="BackgroundGameover/MarginContainer/VBoxContainer" method="_on_BackToMainMenu_pressed"]

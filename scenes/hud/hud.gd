@@ -11,6 +11,7 @@ func updateScore(progress):
 	var scoreText_formatted = scoreText_unformatted % ceil(score)
 	get_node("MarginContainer/VBoxContainer/RichTextLabel").text = scoreText_formatted 
 
+
 func render_hearts():
 	for i in hearts.size():
 		var currentHeart = hearts[i]
@@ -24,19 +25,21 @@ func remove_health():
 	health -= 1
 	render_hearts()
 	if health == 0:
-		# TODO: add gameover state
-		get_tree().change_scene_to_file("res://scenes/mainmenu/mainmenu.tscn")
+		GlobalVar.lastRunScore = ceil(score)
+		get_tree().change_scene_to_file("res://scenes/gameover/gameover.tscn")
 
 
 func count_kill(enemy):
 	kills[enemy] += 1
 	render_kills()
 
+
 func render_kills():
 	for enemy in kills.keys():
 		get_node("MarginContainer/VBoxContainer/VBoxContainer/"
 		+ enemy
 		+ "Container/RichTextLabel").text = "[right]" + str(kills[enemy])
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -62,7 +65,6 @@ func _ready():
 		"rat": 0
 	};
 	render_kills()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
